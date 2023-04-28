@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Country: Identifiable, Hashable {
+struct Country: Identifiable, Hashable, Codable {
     let id = UUID()
     
     
@@ -20,4 +20,15 @@ struct Country: Identifiable, Hashable {
     }
     var isMember: Bool
     var isEuroZone: Bool
+    var isSchengen: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case code
+        case name
+        case area
+        case population
+        case isMember
+        case isEuroZone
+        case isSchengen
+    }
 }
