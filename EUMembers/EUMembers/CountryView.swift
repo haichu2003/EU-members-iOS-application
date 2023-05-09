@@ -11,7 +11,7 @@ struct CountryView: View {
     @State var country: Country
     
     var body: some View {
-        VStack {
+        VStack(spacing: 50) {
             Text("\(country.name)")
                 .font(.largeTitle)
             
@@ -21,6 +21,13 @@ struct CountryView: View {
                 .border(Color.black, width: 1)
             
             CountryDetailsView(country: country)
+            Button(action: {
+                if let url = URL(string: "https://en.wikipedia.org/wiki/\(country.name.replacing(" ", with: "_"))") {
+                   UIApplication.shared.open(url)
+                }
+            }) {
+                Text("Open country wikipedia")
+            }
         }
         .padding()
     }

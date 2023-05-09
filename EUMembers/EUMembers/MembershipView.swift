@@ -11,16 +11,22 @@ struct MembershipView: View {
     @Binding var country: Country
     
     var body: some View {
-        HStack {
+        VStack {
             if country.isMember {
-                Image(systemName: "star")
-                    .font(.system(size: 28.0))
-                    .foregroundColor(.yellow)
+                HStack {
+                    Image(systemName: "star")
+                        .font(.system(size: 28.0))
+                        .foregroundColor(.yellow)
+                    Text(": \(country.name) is a member of the EU")
+                }
             }
             
             if country.isEuroZone {
-                Text("\u{20AC}")
-                    .font(.system(size: 28.0))
+                HStack {
+                    Text("\u{20AC}")
+                        .font(.system(size: 28.0))
+                    Text(": \(country.name) is in the Euro Zone")
+                }
             }
         }
     }

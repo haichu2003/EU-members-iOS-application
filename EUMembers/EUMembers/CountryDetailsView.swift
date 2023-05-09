@@ -16,7 +16,7 @@ struct CountryDetailsView: View {
             
             Text("Population: \(country.population)")
             Text("Area: \(country.area) km\u{B2}")
-            Text("Population density: \(country.populationDensity) persons per km\u{B2}")
+            Text("Population density: \(country.populationDensity) people per km\u{B2}")
         }
     }
 }
